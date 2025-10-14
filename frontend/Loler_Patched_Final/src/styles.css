@@ -1,5 +1,0 @@
-@tailwind base; @tailwind components; @tailwind utilities;
-:root { --accent: #16a34a; }
-body { @apply bg-gray-50 text-gray-800 font-sans; }
-.card { @apply bg-white rounded-lg shadow p-4; }
-.nav { @apply bg-white/80 backdrop-blur sticky top-0 z-50; }
