@@ -1,0 +1,1 @@
+import React from 'react'; export default function About(){ return (<div className='card'><h2 className='text-xl font-bold'>About Loler</h2><p className='mt-2 text-sm text-gray-700'>Loler is a soil intelligence dashboard integrating Google Earth Engine and local sensors to produce actionable recommendations for farmers.</p></div>); }
