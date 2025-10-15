@@ -1,0 +1,2 @@
+import User from '../models/User.js'; import Report from '../models/Report.js';
+export const getStats = async (req,res)=>{ try{ const activeUsers = await User.countDocuments(); const recentReports = await Report.countDocuments(); const last = await Report.findOne().sort({createdAt:-1}); const lastGEESync = last ? last.createdAt : null; res.json({ activeUsers, recentReports, lastGEESync }); }catch(e){console.error(e);res.status(500).json({error:'Server'});} };

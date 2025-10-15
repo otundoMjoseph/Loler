@@ -1,0 +1,1 @@
+import express from 'express'; import { generateReport } from '../controllers/reportController.js'; import { protect } from '../middleware/authMiddleware.js'; const router = express.Router(); router.post('/generate-report', protect, generateReport); export default router;

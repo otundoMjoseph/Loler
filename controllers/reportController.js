@@ -1,0 +1,2 @@
+import Report from '../models/Report.js'; import { generateAIReport } from '../utils/aiEngine.js';
+export const generateReport = async (req,res)=>{ try{ const {soil,moisture,flood_risk,location} = req.body; if(!soil||!moisture||!flood_risk) return res.status(400).json({error:'Incomplete'}); const reportData = generateAIReport(soil,moisture,flood_risk,location); const rep = await Report.create({ ...reportData, soil, moisture, flood_risk, location }); res.json(rep); }catch(e){console.error(e);res.status(500).json({error:'Server'})} };
